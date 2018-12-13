@@ -1,0 +1,81 @@
+#!/bin/bash
+
+#export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+export GRAILS_HOME=/Users/mcroteau/Development/frameworks/grails-current
+export PATH=$PATH:$GRAILS_HOME/bin
+
+export MAVEN_HOME=/Users/mcroteau/Development/tools/maven-current
+export PATH=$PATH:$MAVEN_HOME/bin
+
+export ANT_HOME=/Users/mcroteau/Development/tools/ant-current
+export PATH=$PATH:$ANT_HOME/bin
+
+#export PATH="/usr/local/opt/m4/bin:$PATH"
+
+#export PATH="/Applications/dsdriver/bin:$PATH"
+#export IBM_DB_HOME=/Applications/dsdriver
+#export PATH=$PATH:$IBM_DB_HOME/bin
+
+#export DYLD_LIBRARY_PATH=/Users/regress1/python/python2710/lib/python2.7/site-packages/ibm_db-2.0.6-py2.7-macosx-10.4-x86_64.egg/clidriver/lib/icc:$DYLD_LIBRARY_PATH
+#export DYLD_LIBRARY_PATH=/usr/local/lib/python3.6/site-packages/ibm_db-2.0.8-py3.6-macosx-10.11-x86_64.egg/clidriver/lib/icc:$DYLD_LIBRARY_PATH
+
+export DYLD_LIBRARY_PATH=/usr/local/lib/python3.6/site-packages/ibm_db-2.0.8-py3.6-macosx-10.11-x86_64.egg/clidriver/lib:$DYLD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=/usr/local/lib/python3.6/site-packages/ibm_db-2.0.8-py3.6-macosx-10.11-x86_64.egg/clidriver/lib/icc:$DYLD_LIBRARY_PATH
+
+
+alias ssh-arctic=ssh-arctic
+alias scp-arctic=scp-arctic
+alias scp2-arctic=scp2-arctic
+alias scp-root-arctic=scp-root-arctic
+
+alias ssh-greenfield=ssh-greenfield
+alias scp-greenfield=scp-greenfield
+alias scp2-greenfield=scp2-greenfield
+alias scp-root-greenfield=scp-root-greenfield
+
+
+function scp-arctic(){
+	scp -r greenfield@104.207.157.132:$1 .
+}
+
+function scp-root-arctic(){
+	scp -r root@104.207.157.132:$1 .
+}
+
+function scp2-arctic(){
+ 	scp -r $1 greenfield@104.207.157.132:
+}
+
+function ssh-arctic(){
+	ssh greenfield@104.207.157.132
+}
+
+function scp-greenfield(){
+        scp -r greenfield@104.156.252.167:$1 .
+}
+
+function scp-root-greenfield(){
+        scp -r root@104.156.252.167:$1 .
+}
+
+function scp2-greenfield(){
+        scp -r $1 greenfield@104.156.252.167:
+}
+
+function ssh-greenfield(){
+        ssh greenfield@104.156.252.167
+}
+
+
+
+source ~/.git-completion.bash
+
+
+
+
+
+alias python='python3'
+alias pip='pip3'
